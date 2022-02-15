@@ -28,6 +28,10 @@ function CheckAnswer(x) {
     if (DiscNumbers[x] == CorrectAnswers[DiscFlip]) {
         DiscFlip++;
         console.log("correct");
+        //Check if correct answer resulted in winning game. 
+        if (DiscFlip == 10) {
+            console.log("You won!")
+        }
     } else {
         //display reset button
         document.getElementById('again').style.display = "block";
@@ -51,3 +55,5 @@ function ResetRound(){
     document.getElementById('again').style.display = "none";
     console.log("reset")
 }
+
+console.log(DiscNumbers);
