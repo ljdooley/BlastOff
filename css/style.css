@@ -8,6 +8,10 @@
     color: black;
 }
 
-#again {
+#again, #new {
     display: none;
 }
+/*
+#new {
+    display: none;
+}*/

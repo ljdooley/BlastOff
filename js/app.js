@@ -6,13 +6,18 @@ let DiscFlip = 0; //number of correct flips this round
 //Creates an HTMLCollection of buttons w/Class name discs
 let GameDiscs = document.getElementsByClassName("discs")
 
+shuffle(DiscNumbers);
+console.log(DiscNumbers);
+
 //randomly shuffle the DiscNumbers array
-for(let i = DiscNumbers.length-1; i > 0; i--) {
-    const j = Math.floor(Math.random() * i);
-    const temp = DiscNumbers[i];
-    DiscNumbers[i] = DiscNumbers[j];
-    DiscNumbers[j] = temp;
-  }
+function shuffle(X){
+    for(let i = DiscNumbers.length-1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = DiscNumbers[i];
+        DiscNumbers[i] = DiscNumbers[j];
+        DiscNumbers[j] = temp;
+      }    
+}
 
 function reveal(x){
     //reveal game discs number value
@@ -31,6 +36,8 @@ function CheckAnswer(x) {
         //Check if correct answer resulted in winning game. 
         if (DiscFlip == 10) {
             console.log("You won!")
+            //make new game button visible
+            document.getElementById('new').style.display = "block";
         }
     } else {
         //display reset button
@@ -41,7 +48,6 @@ function CheckAnswer(x) {
             GameDiscs[i].disabled = true;
         }
     }
-    //return
 }
 
 function ResetRound(){
@@ -51,9 +57,13 @@ function ResetRound(){
         GameDiscs[i].innerHTML = "";
     }
     DiscFlip = 0;
-    //hide the reset/try again button
+    //hide the try again button
     document.getElementById('again').style.display = "none";
-    console.log("reset")
 }
 
-console.log(DiscNumbers);
+function NewGame(){
+    shuffle(DiscNumbers);
+    ResetRound();
+    //hide the new game button
+    document.getElementById('new').style.display = "none";
+}
