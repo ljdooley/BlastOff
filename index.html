@@ -13,16 +13,29 @@
     </header>
 
     <main>
-       <button class = 'discs' onclick = 'reveal(0)'></button>
-       <button class = 'discs' onclick = 'reveal(1)'></button>
-       <button class = 'discs' onclick = 'reveal(2)'></button>
-       <button class = 'discs' onclick = 'reveal(3)'></button>
-       <button class = 'discs' onclick = 'reveal(4)'></button>
-       <button class = 'discs' onclick = 'reveal(5)'></button>
-       <button class = 'discs' onclick = 'reveal(6)'></button>
-       <button class = 'discs' onclick = 'reveal(7)'></button>
-       <button class = 'discs' onclick = 'reveal(8)'></button>
-       <button class = 'discs' onclick = 'reveal(9)'></button>
+        <div class = 'gameboard'>
+            <div class = 'gamelines' id = 'row1'>
+                <button class = 'discs' onclick = 'reveal(0)'></button>
+            </div>
+            <div class = 'gamelines' id = 'row2'>
+                <button class = 'discs' onclick = 'reveal(1)'></button>
+                <button class = 'discs' onclick = 'reveal(2)'></button>
+            </div>
+            <div class = 'gamelines' id = 'row3'>
+                <button class = 'discs' onclick = 'reveal(3)'></button>
+                <button class = 'discs' onclick = 'reveal(4)'></button>
+                <button class = 'discs' onclick = 'reveal(5)'></button>
+            </div>
+            <div class = 'gamelines' id = 'row4'>
+                <button class = 'discs' onclick = 'reveal(6)'></button>
+                <button class = 'discs' onclick = 'reveal(7)'></button>
+                <button class = 'discs' onclick = 'reveal(8)'></button>
+                <button class = 'discs' onclick = 'reveal(9)'></button>
+            </div>
+        </div>
+       
+      
+       
 
        <button id="again" onclick = "ResetRound()">Try Again</button>
        <button id="new" onclick = "NewGame()">New Game</button>
